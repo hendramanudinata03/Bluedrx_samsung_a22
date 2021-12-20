@@ -15,13 +15,17 @@
 #include <linux/module.h>
 #include <linux/slab.h>
 
+#ifdef CONFIG_MACH_MT6768
+#include "mt6768/mtk_vcodec_intr.h"
+#else
 #include "mtk_vcodec_intr.h"
+#endif
+
 #include "vdec_vcu_if.h"
 #include "vdec_drv_base.h"
 #include "mtk_vcodec_dec.h"
 #include "mtk_vcodec_drv.h"
 #include "vdec_drv_if.h"
-
 
 static void put_fb_to_free(struct vdec_inst *inst, struct vdec_fb *fb)
 {

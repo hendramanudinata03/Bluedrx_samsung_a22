@@ -19,11 +19,16 @@
 #include <linux/kernel.h>
 #include <linux/slab.h>
 
-#include "venc_drv_base.h"
-#include "venc_drv_if.h"
+#ifdef CONFIG_MACH_MT6768
+#include "mt6768/mtk_vcodec_enc_pm.h"
+#else
+#include "mtk_vcodec_enc_pm.h"
+#endif
 
 #include "mtk_vcodec_enc.h"
-#include "mtk_vcodec_enc_pm.h"
+
+#include "venc_drv_base.h"
+#include "venc_drv_if.h"
 
 #ifdef CONFIG_VIDEO_MEDIATEK_VCU
 #include "mtk_vcu.h"

@@ -19,8 +19,15 @@
 #include <uapi/linux/mtk_vcu_controls.h>
 #include "mtk_vcu.h"
 #include "venc_vcu_if.h"
+
+#ifdef CONFIG_MACH_MT6768
+#include "mt6768/mtk_vcodec_intr.h"
+#include "mt6768/mtk_vcodec_enc_pm.h"
+#else
 #include "mtk_vcodec_intr.h"
 #include "mtk_vcodec_enc_pm.h"
+#endif
+
 #include "mtk_vcodec_enc.h"
 #include "vdec_vcu_if.h"
 

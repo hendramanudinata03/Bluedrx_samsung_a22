@@ -18,11 +18,17 @@
 #include <media/videobuf2-dma-contig.h>
 #include <linux/delay.h>
 
+#ifdef CONFIG_MACH_MT6768
+#include "mt6768/mtk_vcodec_intr.h"
+#include "mt6768/mtk_vcodec_dec_pm.h"
+#else
+#include "mtk_vcodec_intr.h"
+#include "mtk_vcodec_dec_pm.h"
+#endif
+
 #include "mtk_vcodec_drv.h"
 #include "mtk_vcodec_dec.h"
-#include "mtk_vcodec_intr.h"
 #include "mtk_vcodec_util.h"
-#include "mtk_vcodec_dec_pm.h"
 #include "vdec_drv_if.h"
 
 #define MTK_VDEC_MIN_W  64U

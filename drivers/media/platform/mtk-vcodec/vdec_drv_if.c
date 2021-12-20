@@ -17,10 +17,15 @@
 #include <linux/kernel.h>
 #include <linux/slab.h>
 
+#ifdef CONFIG_MACH_MT6768
+#include "mt6768/mtk_vcodec_dec_pm.h"
+#else
+#include "mtk_vcodec_dec_pm.h"
+#endif
+
 #include "vdec_drv_if.h"
 #include "mtk_vcodec_dec.h"
 #include "vdec_drv_base.h"
-#include "mtk_vcodec_dec_pm.h"
 
 #ifdef CONFIG_VIDEO_MEDIATEK_VCU
 #include "mtk_vcu.h"

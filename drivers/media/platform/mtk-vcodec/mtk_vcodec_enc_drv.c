@@ -27,10 +27,16 @@
 #include <linux/suspend.h>
 #include <linux/semaphore.h>
 
-#include "mtk_vcodec_drv.h"
-#include "mtk_vcodec_enc.h"
+#ifdef CONFIG_MACH_MT6768
+#include "mt6768/mtk_vcodec_enc_pm.h"
+#include "mt6768/mtk_vcodec_intr.h"
+#else
 #include "mtk_vcodec_enc_pm.h"
 #include "mtk_vcodec_intr.h"
+#endif
+
+#include "mtk_vcodec_drv.h"
+#include "mtk_vcodec_enc.h"
 #include "mtk_vcodec_util.h"
 #include "mtk_vcu.h"
 
